@@ -8,6 +8,9 @@ export default {
     extend: {
       gridTemplateColumns: {
         '4-col': '1fr 1fr 1fr 1fr'
+      },
+      backgroundImage: {
+        'bgimage': "url('./src/assets/images/series/only-murders.png')"
       }
     },
   },
