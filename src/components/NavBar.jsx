@@ -1,16 +1,9 @@
 import PropTypes from 'prop-types'
-import { NavLink, useLocation } from 'react-router-dom'
-import { useState } from 'react';
+import { NavLink } from 'react-router-dom'
+// import { useState } from 'react';
 
 const NavBar = () => {
   const linkClass = ({ isActive }) => isActive ? 'text-color hover:text-[#7379ff]' : 'hover:text-[#7379ff]';
-  const location = useLocation();
-
-
-
-  // if(location.pathname === '/series')
-
-  const header = location.pathname === '/series' ? 'LATEST SERIES' : location.pathname === '/movies' ? 'LATEST MOVIES' : '';
 
 
   return (
@@ -28,7 +21,7 @@ const NavBar = () => {
         </div>
       </nav>
       <div className='flex flex-1 justify-center items-center'>
-        <h1 className='text-white text-4xl'>{header}</h1>
+        <h1 className='text-white text-4xl'>LATEST MOVIES</h1>
       </div>
     </header>
   )

@@ -1,4 +1,4 @@
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, /*useLocation*/ } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import HomePage from './pages/HomePage'
 import SeriesPage from './pages/SeriesPage'
@@ -8,8 +8,10 @@ import AddPage from './pages/AddPage'
 import ViewPage from './pages/ViewPage'
 
 
-
 const App = () => {
+
+
+
   //ADD NEW JOB
   // const addJob = async (newJob) => {
   //   await fetch('/api/jobs', {
@@ -50,12 +52,14 @@ const App = () => {
         <Route path='/series' element={<SeriesPage />} />
         <Route path='/movies' element={<MoviesPage />} />
         <Route path='/view/:id' element={<ViewPage />} />
-        <Route path='/add/:id' element={<AddPage />} />
+        <Route path='/add' element={<AddPage />} />
         <Route path='*' element={<NotFoundPage />} />
 
       </Route>
     )
   )
+
+
 
   return <RouterProvider router={router} />
 }
