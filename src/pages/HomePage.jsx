@@ -1,11 +1,12 @@
-import Main from "../components/Main"
+// import Main from "../components/Main"
+import MovieListings from "../components/MovieListings"
 
 
 const HomePage = () => {
 
   return (
     <>
-      <Main />
+      <MovieListings isHome={true} />
     </>
   )
 }

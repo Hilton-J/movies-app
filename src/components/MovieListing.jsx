@@ -1,61 +1,32 @@
 import PropTypes from 'prop-types'
-import { FaMapMarker } from "react-icons/fa";
-import { Link } from 'react-router-dom'
+// import { FaMapMarker } from "react-icons/fa";
+// import { Link } from 'react-router-dom'
 
-const MovieListing = ({ movies }) => {
+const MovieListing = ({ movie }) => {
 
 
   return (
-    <div key={movies.id} className="bg-white rounded-xl shadow-md relative">
+    <div key={movie.id} className="bg-white rounded-xl shadow-md relative">
       <div className="p-4">
 
         {/*================= TYPE & TITLE ================================*/}
         <div className="mb-6">
-          <div className="text-gray-600 my-2">{movies.type}</div>
-          <h3 className="text-xl font-bold">{movies.title}</h3>
+          <div className="text-gray-600 my-2">{movie.title}</div>
+          <h3 className="text-xl font-bold"></h3>
         </div>
-
-        {/*================= MOVIES DESCRIPTION ============================ */}
-        {/* <div className="mb-5">{description}</div> */}
-        {/* <button onClick={() => setFullDescription((prevState) => !prevState)} className='text-indigo-500 mb-5 hover:text-indigo-600'></button> */}
-
-
-        {/*================= SALARY ================================*/}
-        <h3 className="text-indigo-500 mb-2">{movies.salary} / Year</h3>
-
-        <div className="border border-gray-100 mb-5"></div>
-
-
-        <div className="flex flex-col lg:flex-row justify-between mb-4">
-          {/*================= MOVIES LOCATION ================================*/}
-
-          <div className="text-orange-700 mb-3">
-            <FaMapMarker className='inline text-lg mb-1 mr-1' />
-            {movies.location}
-          </div>
-
-          {/*================= BUTTON ================================*/}
-          <Link
-            to={`/jobs/${movies.id}`}
-            className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
-          >
-            Read More
-          </Link>
-        </div>
-
       </div>
     </div>
   )
 };
 
 MovieListing.propTypes = {
-  movies: PropTypes.shape({
+  movie: PropTypes.shape({
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    salary: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
   }).isRequired
 };
 
