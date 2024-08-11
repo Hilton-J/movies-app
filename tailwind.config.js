@@ -11,6 +11,9 @@ export default {
       },
       backgroundImage: {
         'bgimage': "url('./src/assets/images/series/only-murders.png')"
+      },
+      backgroundColor: {
+        'color': '#7379ff'
       }
     },
   },

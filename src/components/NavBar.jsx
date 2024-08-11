@@ -1,36 +1,23 @@
 import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
-
+  const linkClass = ({ isActive }) => isActive ? 'text-color hover:text-[#7379ff]' : 'hover:text-[#7379ff]';
 
   return (
-    <nav>
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-bgimage bg-no-repeat bg-cover bg-center">
-        <div className="flex h-20 items-center justify-between">
-          <div
-            className="flex flex-1 items-center justify-center md:items-stretch md:justify-start"
-          >
-            {/* <!-- Logo --> */}
+    <header className='bg-white bg-bgimage bg-no-repeat bg-cover h-[23rem] bg-center'>
+      <nav className='flex justify-center'>
+        <div className='text-white grid grid-cols-3 w-[90%] py-auto mt-16'>
+          <NavLink to={'/'} className=''><span className='text-[#7379ff]'>Enter-</span>Stream</NavLink>
 
-
-            <div className="md:ml-auto">
-              <div className="flex space-x-2">
-                <NavLink
-                  to="/"
-                  className="text-white hover:text-[#7379ff]"
-                >MOVIES</NavLink
-                >
-                <NavLink
-                  to="/jobs"
-                  className="text-white hover:text-[#7379ff]"
-                >SERIES</NavLink
-                >
-              </div>
-            </div>
+          <div className='flex gap-10 justify-center'>
+            <NavLink className={linkClass} to={'/movies'}>MOVIES</NavLink>
+            <NavLink className={linkClass} to={'/series'}>SERIES</NavLink>
           </div>
+
+          <div className='flex justify-end'><NavLink to={'/subscribe'} className='bg-color py-1 px-9 rounded-3xl hover:bg-transparent hover:text-[#7379ff]'>SUBSCRIBE</NavLink></div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   )
 }
 
