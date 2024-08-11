@@ -35,7 +35,7 @@ const Main = () => {
               show.map((dt) => {
 
                 <div key={dt.id}>
-
+                  {dt.title}
                 </div>;
               })
             }

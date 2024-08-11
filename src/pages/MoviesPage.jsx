@@ -1,8 +1,9 @@
+import MovieListings from "../components/MovieListings"
 
 
 const MoviesPage = () => {
   return (
-    <div>MoviesPage</div>
+    <section><MovieListings /></section>
   )
 }
 
