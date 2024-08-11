@@ -12,14 +12,14 @@ const MovieListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = isHome ? "/api/table?_limit=6" : "/api/table";
+      const apiUrl = isHome ? '/api/table?_limit=6' : '/api/table';
 
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
         setMovies(data);
       } catch (error) {
-        console.log("Error fetching data", error);
+        console.log('Error fetching data', error);
       } finally {
         setLoading(false);
       }
