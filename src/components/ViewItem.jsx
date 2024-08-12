@@ -28,6 +28,7 @@ const ViewItem = () => {
     fetchItem();
   }, [apiUrl]);
 
+  //TODO: Ask Kat why it comes back null
   console.log(item);
   console.log(loading);
   return (
