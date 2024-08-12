@@ -4,8 +4,8 @@ import Links from './Links'
 const Footer = () => {
   // const linkClass = ({ isActive }) => isActive ? 'text-color hover:text-[#7379ff]' : 'hover:text-[#7379ff]';
   return (
-    <section className='h-1'>
-      <footer className='flex justify-center '>
+    <section className='bg-white  flex flex-col'>
+      <footer className='flex justify-center h-20 items-center'>
         {/* <div className='grid grid-cols-3 w-[90%] py-auto mt-9 text-black' >
           <div>
             <Link to={'/'} className='hover:text-[#7379ff]'><span>Enter-</span>Stream</Link>

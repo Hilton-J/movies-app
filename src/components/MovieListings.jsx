@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Listing from "./Listing";
 import Spinner from "./Spinner";
-import { Link } from "react-router-dom"
+import BTN from './MoreBtn'
 // import Movies from '../movies.json' you use this if you're not using a server
 
 const MovieListings = ({ isHome = false }) => {
@@ -34,11 +34,10 @@ const MovieListings = ({ isHome = false }) => {
     <section className="bg-blue-50 px-4 py-10">
       <div className="container-xl lg:container m-auto">
         <div>
-          <h2 className="text-3xl font-bold text-indigo-500 mb-6 text-center">
-            {isHome ? 'LATEST MOVIES' : 'BROWSE MOVIES'}
-          </h2>
+          {isHome ? < h2 className="text-lg font-bold mb-10 text-center">LATEST MOVIES </h2> : <BTN innerText={'ADD'} path={'/add'} />}
+
           {loading ? (<Spinner />) : (
-            <div className="grid md:grid-cols-4-col gap-2 mb-4">
+            <div className="grid md:grid-cols-4-col gap-2 my-4">
               {
                 movies.map((movie) => (
                   <Listing key={movie.id} movie={movie} />
@@ -46,9 +45,7 @@ const MovieListings = ({ isHome = false }) => {
               }
             </div>
           )}
-          <div className='flex justify-end'>
-            <Link to={'/subscribe'} className='bg-color text-white py-1 px-9 rounded-3xl hover:bg-transparent hover:text-[#7379ff]'>More</Link>
-          </div>
+          {isHome && <BTN innerText={'MORE'} path={'/movies'} />}
         </div>
       </div>
     </section >

@@ -1,8 +1,8 @@
-
+import SeriesListings from '../components/SeriesListings'
 
 const SeriesPage = () => {
   return (
-    <div>SeriesPage</div>
+    <section><SeriesListings /></section>
   )
 }
 

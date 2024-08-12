@@ -9,7 +9,7 @@ const Links = ({ place }) => {
   if (place === 'nav') {
     CustomLink = NavLink;
     linkClass = ({ isActive }) => isActive ? 'text-color' : '';
-    textColor = 'text-white';
+    textColor = 'text-white mt-9';
   }
   else {
     CustomLink = Link;
@@ -19,18 +19,18 @@ const Links = ({ place }) => {
 
 
   return (
-    <div className={`${textColor} grid grid-cols-3 w-[90%] py-auto mt-9 `} >
+    <div className={`${textColor} grid grid-cols-3 w-[90%] py-auto`} >
       <div>
-        <CustomLink to={'/'} className='hover:text-[#7379ff]'><span className='text-[#7379ff]'>Enter-</span>Stream</CustomLink>
+        <CustomLink to={'/'} className='hover:text-[#7379ff] text-2xl'><span className='text-[#7379ff]'>Enter-</span>Stream</CustomLink>
       </div>
 
 
-      <div className='flex gap-10 justify-center'>
+      <div className='flex gap-10 justify-center items-center'>
         <CustomLink className={`${linkClass} hover:text-color`} to={'/movies'}>MOVIES</CustomLink>
         <CustomLink className={`${linkClass} hover:text-color`} to={'/series'}>SERIES</CustomLink>
       </div>
 
-      <div className='flex justify-end'><CustomLink to={'/subscribe'} className={place === 'nav' ? 'bg-color py-1 px-9 rounded-3xl hover:bg-transparent ' : 'hover:text-[#7379ff]'}>SUBSCRIBE</CustomLink></div>
+      <div className='flex justify-end items-center'><CustomLink to={'/subscribe'} className={place === 'nav' ? 'bg-color py-1 px-9 rounded-3xl hover:bg-transparent ' : 'hover:text-[#7379ff]'}>SUBSCRIBE</CustomLink></div>
     </div >
   )
 };
