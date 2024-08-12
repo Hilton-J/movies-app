@@ -26,8 +26,8 @@ const Links = ({ place }) => {
 
 
       <div className='flex gap-10 justify-center'>
-        <CustomLink className={`${linkClass} hover:text-[#7379ff]`} to={'/movies'}>MOVIES</CustomLink>
-        <CustomLink className={`${linkClass} hover:text-[#7379ff]`} to={'/series'}>SERIES</CustomLink>
+        <CustomLink className={`${linkClass} hover:text-color`} to={'/movies'}>MOVIES</CustomLink>
+        <CustomLink className={`${linkClass} hover:text-color`} to={'/series'}>SERIES</CustomLink>
       </div>
 
       <div className='flex justify-end'><CustomLink to={'/subscribe'} className={place === 'nav' ? 'bg-color py-1 px-9 rounded-3xl hover:bg-transparent ' : 'hover:text-[#7379ff]'}>SUBSCRIBE</CustomLink></div>
