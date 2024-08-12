@@ -1,27 +1,40 @@
-// import PropTypes from 'prop-types'
+// import ArrayOb from './Item'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 const ViewItem = () => {
+  const { type, id } = useParams();
+
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const apiUrl = `/api/${type}/${id}`;
+
+  useEffect(() => {
+    const fetchItem = async () => {
+      try {
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        setItem(data);
+        console.log(data);
+      }
+      catch (error) {
+        console.log('Error fetching data', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchItem();
+  }, [apiUrl]);
+
+  console.log(item);
+  console.log(loading);
   return (
     <div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" alt="Avengers Endgame" />
-      </div>
-      <div>
-        <h1>Avengers Endgame</h1>
-        <p>After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos actions and restore order to the universe once and for all, no matter what consequences may be in store.</p>
-        <div>
-          <p><strong>Country:</strong> USA</p>
-          <p><strong>Genre:</strong> Action, Adventure, Science Fiction</p>
-          <p><strong>Year:</strong> 2019</p>
-          <p><strong>Type:</strong> Movie</p>
-        </div>
-        <div>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div>
-      </div>
+      {/* {loading
+        &&
+        <ArrayOb arr={item} />} */}
     </div>
   )
-}
+};
 
 export default ViewItem

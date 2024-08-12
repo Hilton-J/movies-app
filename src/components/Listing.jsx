@@ -10,7 +10,7 @@ const MovieListing = ({ movie }) => {
       <div className="p-4">
 
         {/*================= TYPE & TITLE ================================*/}
-        <div className="text-gray-600 my-2"><Link to={`/view/${movie.id}`}>{movie.title}</Link></div>
+        <div className="text-gray-600 my-2"><Link to={`/${movie.type}/${movie.id}`}>{movie.title}</Link></div>
       </div>
     </div>
   )

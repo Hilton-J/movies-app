@@ -51,7 +51,8 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path='/series' element={<SeriesPage />} />
         <Route path='/movies' element={<MoviesPage />} />
-        <Route path='/view/:id' element={<ViewPage />} />
+        <Route path='/:type/:id' element=
+          {<ViewPage />} />
         <Route path='/add' element={<AddPage />} />
         <Route path='*' element={<NotFoundPage />} />
 

@@ -1,9 +1,9 @@
 {
-  "movie": [
+  "movies": [
     {
       "id": "1",
       "title": "Avengers Endgame",
-      "type": "movie",
+      "type": "movies",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
       "year": "2024"
@@ -11,7 +11,7 @@
     {
       "id": "2",
       "title": "Queen & SLim",
-      "type": "movie",
+      "type": "movies",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
       "year": "2024"
@@ -19,7 +19,7 @@
     {
       "id": "3",
       "title": "A Hidden Life",
-      "type": "movie",
+      "type": "movies",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
       "year": "2024"
@@ -27,7 +27,7 @@
     {
       "id": "4",
       "title": "The Death of Dick Long",
-      "type": "movie",
+      "type": "movies",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
       "year": "2024"
@@ -35,7 +35,7 @@
     {
       "id": "5",
       "title": "John Wick CHAPTER3",
-      "type": "movie",
+      "type": "movies",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
       "year": "2024"
@@ -43,7 +43,7 @@
     {
       "id": "6",
       "title": "US",
-      "type": "movie",
+      "type": "movies",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
       "year": "2024"
@@ -51,7 +51,7 @@
     {
       "id": "7",
       "title": "Joker",
-      "type": "movie",
+      "type": "movies",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
       "year": "2024"
@@ -59,7 +59,7 @@
     {
       "id": "8",
       "title": "One Child Nation",
-      "type": "movie",
+      "type": "movies",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
       "year": "2024"

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import Listing from "./Listing";
+import Listing from './Listing'
 import Spinner from "./Spinner";
 import BTN from './MoreBtn'
 // import Movies from '../movies.json' you use this if you're not using a server
@@ -13,7 +13,7 @@ const MovieListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const apiUrl = isHome ? '/api/movie?_limit=8' : '/api/movie';
+      const apiUrl = isHome ? '/api/movies?_limit=8' : '/api/movies';
 
 
 
@@ -29,6 +29,8 @@ const MovieListings = ({ isHome = false }) => {
     };
     fetchMovies();
   }, [isHome]);
+
+  console.log(movies);
 
   return (
     <section className="bg-blue-50 px-4 py-10">
