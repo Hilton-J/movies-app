@@ -14,6 +14,9 @@ export default {
       },
       backgroundColor: {
         'color': '#7379ff'
+      },
+      textColor: {
+        'color': '#7379ff'
       }
     },
   },
