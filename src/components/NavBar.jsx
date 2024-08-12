@@ -3,17 +3,20 @@ import { Link } from 'react-router-dom'
 // import { useState } from 'react';
 
 const NavBar = ({ header }) => {
-  const linkClass = ({ isActive }) => isActive ? 'text-color hover:text-[#7379ff]' : 'hover:text-[#7379ff]';
+  const linkClass = ({ isActive }) => isActive ? 'text-color hover:text-[#7379ff]' : '';
 
 
   return (
     <header className='bg-white bg-bgimage bg-no-repeat bg-cover h-[23rem] bg-center flex flex-col'>
       <nav className='flex justify-center'>
         <div className='text-white grid grid-cols-3 w-[90%] py-auto mt-9 ' >
-          <Link to={'/'} className='hover:text-[#7379ff]'><span className='text-[#7379ff] hover:text-white'>Enter-</span>Stream</Link>
+          <div>
+            <Link to={'/'} className='hover:text-[#7379ff]'><span className='text-[#7379ff]'>Enter-</span>Stream</Link>
+          </div>
+
 
           <div className='flex gap-10 justify-center'>
-            <Link className={linkClass} to={'/movies'}>MOVIES</Link>
+            <Link className={`hover:text-[#7379ff] ${linkClass}`} to={'/movies'}>MOVIES</Link>
             <Link className={linkClass} to={'/series'}>SERIES</Link>
           </div>
 

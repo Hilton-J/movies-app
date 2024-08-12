@@ -1,6 +1,7 @@
 import { Outlet, useLocation, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import NavBar from "../components/NavBar"
+import Footer from "../components/Footer"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -39,6 +40,7 @@ const MainLayout = () => {
     <>
       <NavBar header={pageTitle} />
       <Outlet />
+      <Footer />
       <ToastContainer />
     </>
   )

@@ -1,5 +1,5 @@
 {
-  "table": [
+  "movie": [
     {
       "id": "1",
       "title": "Avengers Endgame",
@@ -18,7 +18,7 @@
     },
     {
       "id": "3",
-      "title": "Avengers Endgame",
+      "title": "A Hidden Life",
       "type": "movie",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -26,7 +26,7 @@
     },
     {
       "id": "4",
-      "title": "Avengers Endgame",
+      "title": "The Death of Dick Long",
       "type": "movie",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -34,7 +34,7 @@
     },
     {
       "id": "5",
-      "title": "Avengers Endgame",
+      "title": "John Wick CHAPTER3",
       "type": "movie",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -42,7 +42,7 @@
     },
     {
       "id": "6",
-      "title": "Avengers Endgame",
+      "title": "US",
       "type": "movie",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -50,7 +50,7 @@
     },
     {
       "id": "7",
-      "title": "Avengers Endgame",
+      "title": "Joker",
       "type": "movie",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -58,15 +58,17 @@
     },
     {
       "id": "8",
-      "title": "Avengers Endgame",
+      "title": "One Child Nation",
       "type": "movie",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
       "year": "2024"
-    },
+    }
+  ],
+  "series": [
     {
       "id": "9",
-      "title": "Avengers Endgame",
+      "title": "Dark",
       "type": "series",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -74,7 +76,7 @@
     },
     {
       "id": "10",
-      "title": "Queen & SLim",
+      "title": "Altered Carbon",
       "type": "series",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -82,7 +84,7 @@
     },
     {
       "id": "11",
-      "title": "Avengers Endgame",
+      "title": "Loki",
       "type": "series",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -90,7 +92,7 @@
     },
     {
       "id": "12",
-      "title": "Avengers Endgame",
+      "title": "Fallout",
       "type": "series",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -98,7 +100,7 @@
     },
     {
       "id": "13",
-      "title": "Avengers Endgame",
+      "title": "The Last of Us",
       "type": "series",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -106,7 +108,7 @@
     },
     {
       "id": "14",
-      "title": "Avengers Endgame",
+      "title": "Only Murders In The Building",
       "type": "series",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -114,7 +116,7 @@
     },
     {
       "id": "15",
-      "title": "Avengers Endgame",
+      "title": "Rick and Morty",
       "type": "series",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",
@@ -122,7 +124,7 @@
     },
     {
       "id": "16",
-      "title": "Avengers Endgame",
+      "title": "Wednesday",
       "type": "series",
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos’ actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       "country": "USA",

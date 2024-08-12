@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 // import { FaMapMarker } from "react-icons/fa";
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const MovieListing = ({ movie }) => {
 
@@ -10,7 +10,7 @@ const MovieListing = ({ movie }) => {
       <div className="p-4">
 
         {/*================= TYPE & TITLE ================================*/}
-        <div className="text-gray-600 my-2"><link to=''>{movie.title}</link></div>
+        <div className="text-gray-600 my-2"><Link to={`/view/${movie.id}`}>{movie.title}</Link></div>
       </div>
     </div>
   )

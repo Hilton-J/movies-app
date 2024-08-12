@@ -1,5 +1,6 @@
 // import Main from "../components/Main"
 import MovieListings from "../components/MovieListings"
+import SeriesListings from "../components/SeriesListings"
 
 
 const HomePage = () => {
@@ -7,6 +8,7 @@ const HomePage = () => {
   return (
     <>
       <MovieListings isHome={true} />
+      <SeriesListings isHome={true} />
     </>
   )
 }
