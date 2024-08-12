@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import { useState } from 'react';
 
 const NavBar = ({ header }) => {
@@ -10,14 +10,14 @@ const NavBar = ({ header }) => {
     <header className='bg-white bg-bgimage bg-no-repeat bg-cover h-[23rem] bg-center flex flex-col'>
       <nav className='flex justify-center'>
         <div className='text-white grid grid-cols-3 w-[90%] py-auto mt-9 ' >
-          <NavLink to={'/'} className='hover:text-[#7379ff]'><span className='text-[#7379ff] hover:text-white'>Enter-</span>Stream</NavLink>
+          <Link to={'/'} className='hover:text-[#7379ff]'><span className='text-[#7379ff] hover:text-white'>Enter-</span>Stream</Link>
 
           <div className='flex gap-10 justify-center'>
-            <NavLink className={linkClass} to={'/movies'}>MOVIES</NavLink>
-            <NavLink className={linkClass} to={'/series'}>SERIES</NavLink>
+            <Link className={linkClass} to={'/movies'}>MOVIES</Link>
+            <Link className={linkClass} to={'/series'}>SERIES</Link>
           </div>
 
-          <div className='flex justify-end'><NavLink to={'/subscribe'} className='bg-color py-1 px-9 rounded-3xl hover:bg-transparent hover:text-[#7379ff]'>SUBSCRIBE</NavLink></div>
+          <div className='flex justify-end'><Link to={'/subscribe'} className='bg-color py-1 px-9 rounded-3xl hover:bg-transparent hover:text-[#7379ff]'>SUBSCRIBE</Link></div>
         </div>
       </nav>
 

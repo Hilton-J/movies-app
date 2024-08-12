@@ -10,10 +10,7 @@ const MovieListing = ({ movie }) => {
       <div className="p-4">
 
         {/*================= TYPE & TITLE ================================*/}
-        <div className="mb-6">
-          <div className="text-gray-600 my-2">{movie.title}</div>
-          <h3 className="text-xl font-bold"></h3>
-        </div>
+        <div className="text-gray-600 my-2"><link to=''>{movie.title}</link></div>
       </div>
     </div>
   )

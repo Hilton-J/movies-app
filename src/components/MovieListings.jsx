@@ -12,7 +12,7 @@ const MovieListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const apiUrl = isHome ? '/api/table?_limit=6' : '/api/table';
+      const apiUrl = isHome ? '/api/table?_limit=8' : '/api/table';
 
 
 
