@@ -3,6 +3,7 @@
 import { useLoaderData, useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { toast } from 'react-toastify'
+import BTN from './MoreBtn'
 
 const ViewItem = ({ deleteItem }) => {
   // using useParam & useEffect to fetch data
@@ -54,25 +55,29 @@ const ViewItem = ({ deleteItem }) => {
   };
 
   return (
-    <div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" alt="Avengers Endgame" />
-      </div>
-      <div>
-        <h1>{item.title}</h1>
-        <p>{item.description}</p>
-        <div>
-          <p>Country:  {item.country}</p>
-          <p>Genre: Action, Adventure, Science Fiction</p>
-          <p>Year: {item.year}</p>
-          <p>Type: {item.type}</p>
+    <section className='bg-blue-50 px-4 py-10'>
+      <div className='container-xl lg:container m-auto'>
+        <div className='grid md:grid-cols-2'>
+          <div>
+            <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" alt="Avengers Endgame" />
+          </div>
+          <div>
+            <h1>{item.title}</h1>
+            <p>{item.description}</p>
+            <div>
+              <p>Country:  {item.country}</p>
+              <p>Genre: Action, Adventure, Science Fiction</p>
+              <p>Year: {item.year}</p>
+              <p>Type: {item.type}</p>
+            </div>
+            <div className='flex flex-row'>
+              <BTN onClick={() => { onDeleteClick(item.id, item.type) }} innerText={'EDIT'} path={`/${item.type}`} />
+              <BTN onClick={() => { onDeleteClick(item.id, item.type) }} innerText={'DELETE'} path={`/${item.type}`} />
+            </div>
+          </div>
         </div>
-        <div>
-          <button >Edit</button>
-          <button onClick={() => { onDeleteClick(item.id, item.type) }}>Delete</button>
-        </div>
       </div>
-    </div>
+    </section>
   )
 };
 
