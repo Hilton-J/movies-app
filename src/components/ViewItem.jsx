@@ -1,36 +1,58 @@
-// import ArrayOb from './Item'
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+// import { useState, useEffect } from 'react'
+// import { useParams } from 'react-router-dom'
+import { useLoaderData, useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { toast } from 'react-toastify'
 
-const ViewItem = () => {
-  const { id, type } = useParams();
+const ViewItem = ({ deleteItem }) => {
+  // using useParam & useEffect to fetch data
+  // const { id, type } = useParams();
 
-  console.log(id, type);
+  // console.log(id, type);
 
-  const [item, setItem] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const apiUrl = `/api/${type}/${id}`;
+  // const inItem = {
+  //   "id": "",
+  //   "title": "",
+  //   "type": "",
+  //   "description": "",
+  //   "country": "",
+  //   "year": ""
+  // };
 
-  useEffect(() => {
-    const fetchItem = async () => {
-      try {
-        const res = await fetch(apiUrl);
-        const data = await res.json();
-        setItem(data);
-        console.log(data);
-      }
-      catch (error) {
-        console.log('Error fetching data', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchItem();
-  }, [apiUrl]);
+  // const [item, setItem] = useState(inItem);
+  // const [loading, setLoading] = useState(true);
+  // let apiUrl = `/api/${type}/${id}`;
 
-  //TODO: Ask Kat why it comes back null
-  console.log(item);
-  console.log(loading);
+  // useEffect(() => {
+  //   const fetchItem = async () => {
+  //     try {
+  //       const res = await fetch(apiUrl);
+  //       const data = await res.json();
+  //       setItem(data);
+  //     }
+  //     catch (error) {
+  //       console.log('Error fetching data', error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+  //   fetchItem();
+  // }, [apiUrl]);
+
+  const item = useLoaderData();
+  const navigation = useNavigate();
+
+  const onDeleteClick = (itemID, type) => {
+    const confirm = window.confirm('Are you sure you want to delete this listing');
+
+    if (!confirm) return;
+
+    deleteItem(itemID, type);
+
+    toast.success(`${type} deleted successfully!`);
+    return navigation(`/${type}`)
+  };
+
   return (
     <div>
       <div>
@@ -47,11 +69,15 @@ const ViewItem = () => {
         </div>
         <div>
           <button>Edit</button>
-          <button>Delete</button>
+          <button onClick={() => { onDeleteClick(item.id, item.type) }}>Delete</button>
         </div>
       </div>
     </div>
   )
 };
 
+
+ViewItem.propTypes = {
+  deleteItem: PropTypes.func
+};
 export default ViewItem

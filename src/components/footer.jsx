@@ -1,22 +1,20 @@
-// import { Link } from 'react-router-dom'
-import Links from './Links'
+import { Link } from 'react-router-dom'
+// import Links from './Links'
 
 const Footer = () => {
-  // const linkClass = ({ isActive }) => isActive ? 'text-color hover:text-[#7379ff]' : 'hover:text-[#7379ff]';
   return (
     <section className='bg-white  flex flex-col'>
-      <footer className='flex justify-center h-20 items-center'>
-        {/* <div className='grid grid-cols-3 w-[90%] py-auto mt-9 text-black' >
+      <footer className='flex justify-center h-16 items-center bg-[#d9d9d9]'>
+        <div className='grid grid-cols-3 w-[90%] py-auto text-black' >
           <div>
-            <Link to={'/'} className='hover:text-[#7379ff]'><span>Enter-</span>Stream</Link>
+            <Link to={'/'} className='md:text-2xl hover:text-[#7379ff]'>Enter-Stream</Link>
           </div>
-          <div className='flex gap-10 justify-center'>
-            <Link className={linkClass} to={'/movies'}>MOVIES</Link>
-            <Link className={linkClass} to={'/series'}>SERIES</Link>
+          <div className='flex gap-10 justify-center items-center'>
+            <Link className='hover:text-[#7379ff]' to={'/movies'}>MOVIES</Link>
+            <Link className='hover:text-[#7379ff]' to={'/series'}>SERIES</Link>
           </div>
-          <div className='flex justify-end'><Link to={'/subscribe'} className='hover:text-[#7379ff]'>SUBSCRIBE</Link></div>
-        </div> */}
-        <Links place='footer' />
+          <div className='flex justify-end items-center'><Link to={'/subscribe'} className='hover:text-[#7379ff]'>SUBSCRIBE</Link></div>
+        </div>
       </footer>
     </section>
   )

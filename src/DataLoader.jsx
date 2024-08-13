@@ -1,5 +1,7 @@
-export const DataLoader = async ({ params, path }) => {
-  const res = await fetch(`/api/${path}/${params.id}`);
+export const dataLoader = async ({ params }) => {
+  const url = `/api/${params.type}/${params.id}`
+  const res = await fetch(url);
+  console.log(res);
   const data = await res.json();
   return data;
 };

@@ -6,6 +6,7 @@ import MoviesPage from './pages/MoviesPage'
 import NotFoundPage from './pages/NotFoundPage'
 import AddPage from './pages/AddPage'
 import ViewPage from './pages/ViewPage'
+import { dataLoader } from './DataLoader'
 
 
 const App = () => {
@@ -25,13 +26,13 @@ const App = () => {
   // };
 
 
-  //DELETE JOB 
-  // const deleteJob = async (id) => {
-  //   await fetch(`/api/jobs/${id}`, {
-  //     method: 'DELETE'
-  //   });
-  //   return;
-  // };
+  //DELETE item: movie or series
+  const deleteItem = async (id, path) => {
+    await fetch(`/api/${path}/${id}`, {
+      method: 'DELETE'
+    });
+    return;
+  };
 
   //UPDATE JOB
   // const updateJob = async (job) => {
@@ -52,7 +53,7 @@ const App = () => {
         <Route path='/series' element={<SeriesPage />} />
         <Route path='/movies' element={<MoviesPage />} />
         <Route path='/:type/:id' element=
-          {<ViewPage />} />
+          {<ViewPage deleteItem={deleteItem} />} loader={dataLoader} />
         <Route path='/add' element={<AddPage />} />
         <Route path='*' element={<NotFoundPage />} />
 
