@@ -18,7 +18,7 @@ const MainLayout = () => {
     const id = pathParts[2];
     console.log(arrayName);
 
-
+    //TODO: implemement what ChatGPT told you
     let title = '';
     switch (location.pathname.split('/')[1]) {
       case 'series':
