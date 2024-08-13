@@ -16,11 +16,10 @@ const MainLayout = () => {
     const pathParts = location.pathname.split('/');
     const arrayName = pathParts[1];
     const id = pathParts[2];
-    console.log(arrayName);
 
     //TODO: implemement what ChatGPT told you
     let title = '';
-    switch (location.pathname.split('/')[1]) {
+    switch (arrayName) {
       case 'series':
         title = 'LATEST SERIES';
         break;
@@ -40,8 +39,6 @@ const MainLayout = () => {
     }
     setPageTitle(title);
   }, [location, id, type]);
-
-
 
   return (
     <>
