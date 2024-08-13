@@ -68,7 +68,7 @@ const ViewItem = ({ deleteItem }) => {
           <p>Type: {item.type}</p>
         </div>
         <div>
-          <button>Edit</button>
+          <button >Edit</button>
           <button onClick={() => { onDeleteClick(item.id, item.type) }}>Delete</button>
         </div>
       </div>

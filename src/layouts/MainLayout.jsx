@@ -8,10 +8,17 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const MainLayout = () => {
   const location = useLocation();
-  const { id } = useParams();
+  const { type, id } = useParams();
   const [pageTitle, setPageTitle] = useState('');
 
   useEffect(() => {
+
+    const pathParts = location.pathname.split('/');
+    const arrayName = pathParts[1];
+    const id = pathParts[2];
+    console.log(arrayName);
+
+
     let title = '';
     switch (location.pathname.split('/')[1]) {
       case 'series':
@@ -20,8 +27,8 @@ const MainLayout = () => {
       case 'movies':
         title = 'LATEST MOVIES';
         break;
-      case 'view':
-        fetchTitle(id).then((showTitle) => {
+      case `${arrayName}/${id}`:
+        fetchTitle(type, id).then((showTitle) => {
           setPageTitle(showTitle);
         });
         return;
@@ -32,7 +39,7 @@ const MainLayout = () => {
         title = '';
     }
     setPageTitle(title);
-  }, [location, id]);
+  }, [location, id, type]);
 
 
 
@@ -48,8 +55,9 @@ const MainLayout = () => {
 
 export default MainLayout;
 
-const fetchTitle = async (id) => {
-  const res = await fetch(`/api/${id}`);
+const fetchTitle = async (type, id) => {
+  const url = `/api/${type}/${id}`;
+  const res = await fetch(url);
   const data = await res.json();
   return data.title;
 };

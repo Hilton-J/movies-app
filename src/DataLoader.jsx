@@ -5,3 +5,4 @@ export const dataLoader = async ({ params }) => {
   const data = await res.json();
   return data;
 };
+
