@@ -58,15 +58,15 @@ const ViewItem = ({ deleteItem }) => {
     <section className='bg-blue-50 px-4 py-10'>
       <div className='container-xl lg:container m-auto'>
         <div className='grid md:grid-cols-2'>
-          <div className=''>
-            <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" alt="Avengers Endgame" />
+          <div className='size-full'>
+            <img src={item.image} alt={item.title} />
           </div>
           <div>
             <h1>{item.title}</h1>
             <p>{item.description}</p>
             <div>
               <p>Country:  {item.country}</p>
-              <p>Genre: Action, Adventure, Science Fiction</p>
+              <p>Genre: {''}</p>
               <p>Year: {item.year}</p>
               <p>Type: {item.type}</p>
             </div>

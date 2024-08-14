@@ -6,11 +6,9 @@ const MovieListing = ({ movie }) => {
 
 
   return (
-    <div key={movie.id} className="bg-white rounded-xl shadow-md relative">
-      <div className="p-4">
-
-        {/*================= TYPE & TITLE ================================*/}
-        <div className="text-gray-600 my-2"><Link to={`/${movie.type}/${movie.id}`}>{movie.title}</Link></div>
+    <div key={movie.id} className="bg-white rounded-xl shadow-md relative ">
+      {/*================= TYPE & TITLE ================================*/}
+      <div className="text-gray-600"><Link to={`/${movie.type}/${movie.id}`}><img src={movie.image} /></Link>
       </div>
     </div>
   )
@@ -24,6 +22,7 @@ MovieListing.propTypes = {
     description: PropTypes.string.isRequired,
     country: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
+    image: PropTypes.string
   }).isRequired
 };
 
