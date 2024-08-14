@@ -1,9 +1,9 @@
-import { useLoaderData, useNavigate } from 'react-router-dom'
+import { useLoaderData, useNavigate, Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { toast } from 'react-toastify'
 import BTN from '../components/MoreBtn'
 
-const ViewPage = ({ deleteItem, editItem }) => {
+const ViewPage = ({ deleteItem }) => {
 
   const item = useLoaderData();
   const navigation = useNavigate();
@@ -18,16 +18,6 @@ const ViewPage = ({ deleteItem, editItem }) => {
     deleteItem(itemID, type);
 
     toast.success(`${type} DELETED successfully!`);
-    return navigation(`/${type}`)
-  };
-
-  const onEditClick = (itemID, type) => {
-
-    if (!confirm) return;
-
-    editItem(itemID, type);
-
-    toast.success(`${type} UPDATED successfully!`);
     return navigation(`/${type}`)
   };
 
@@ -51,7 +41,9 @@ const ViewPage = ({ deleteItem, editItem }) => {
               <p><strong>Type</strong>: {item.type}</p>
             </div>
             <div className='flex flex-row gap-4'>
-              <BTN onClick={() => { onEditClick(item.id, item.type) }} innerText={'EDIT'} path={`/${item.type}`} />
+              <div className='flex justify-end'>
+                <Link to={`/edit/${item.type}/${item.id}`} className='bg-color text-white py-1 px-9 rounded-3xl hover:bg-transparent hover:text-[#7379ff]' >EDIT</Link>
+              </div>
               <BTN onClick={() => { onDeleteClick(item.id, item.type) }} innerText={'DELETE'} path={`/${item.type}`} />
             </div>
           </div>

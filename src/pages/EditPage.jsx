@@ -17,6 +17,7 @@ const EditPage = ({ editItemSubmit }) => {
   const [genres, setGenres] = useState('');
   const navigate = useNavigate();
 
+  {/* ================================ CONVERT IMAGE TO BASE65 ================================================= */ }
   function convertToBase64(e) {
     const file = e.target.files[0];
     if (file) {
@@ -35,7 +36,7 @@ const EditPage = ({ editItemSubmit }) => {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    const newItem = {
+    const editItem = {
       title,
       type,
       description,
@@ -45,13 +46,15 @@ const EditPage = ({ editItemSubmit }) => {
       image
     };
 
-    await editItemSubmit(newItem, type);
 
-    toast.success('ADDED successfully!');
+    editItemSubmit(editItem, type);
+
+    toast.success('UPDATED successfully!');
     console.log(type);
     return navigate(`/${type}`);
 
   };
+
 
   const handleGenreSelect = (selectedList) => {
     setGenres(selectedList);

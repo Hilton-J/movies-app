@@ -6,6 +6,7 @@ import MoviesPage from './pages/MoviesPage'
 import NotFoundPage from './pages/NotFoundPage'
 import AddPage from './pages/AddPage'
 import ViewPage from './pages/ViewPage'
+import EditPage from './pages/EditPage'
 import { dataLoader } from './DataLoader'
 
 
@@ -51,7 +52,8 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path='/series' element={<SeriesPage />} />
         <Route path='/movies' element={<MoviesPage />} />
-        <Route path='/:type/:id' element={<ViewPage deleteItem={deleteItem} editItem={updateItem} />} loader={dataLoader} />
+        <Route path='/:type/:id' element={<ViewPage deleteItem={deleteItem} />} loader={dataLoader} />
+        <Route path='/edit/:type/:id' element={<EditPage editItem={updateItem} />} loader={dataLoader} />
         <Route path='/add' element={<AddPage addItemSubmit={addItem} />} />
         <Route path='*' element={<NotFoundPage />} />
       </Route>
