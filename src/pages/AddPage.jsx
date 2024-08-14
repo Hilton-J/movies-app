@@ -10,7 +10,23 @@ const AddItem = ({ addItemSubmit }) => {
   const [country, setCountry] = useState('');
   const [year, setYear] = useState('');
   const [type, setType] = useState('');
+  const [image, setImage] = useState('');
   const navigate = useNavigate();
+
+  function convertToBase64(e) {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        setImage(reader.result);
+        console.log("File converted to base64:", reader.result);
+      };
+      reader.onerror = (error) => {
+        console.log("Error: ", error);
+      };
+    }
+  }
 
   const submitForm = async (e) => {
     e.preventDefault();
