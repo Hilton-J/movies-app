@@ -12,8 +12,8 @@ import { dataLoader } from './DataLoader'
 const App = () => {
 
   //ADD NEW JOB
-  const addItem = async (newItem, itemType) => {
-    const url = `/api/${itemType}`
+  const addItem = async (newItem, path) => {
+    const url = `/api/${path}`
     await fetch(url, {
       method: 'POST',
       headers: {
@@ -33,17 +33,17 @@ const App = () => {
     return;
   };
 
-  //UPDATE JOB
-  // const updateJob = async (job) => {
-  //   await fetch(`/api/jobs/${job.id}`, {
-  //     method: 'PUT',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(job),
-  //   });
-  //   return;
-  // };
+  //UPDATE item: movie or series
+  const updateItem = async (item, path) => {
+    await fetch(`/api/${path}/${item.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(item),
+    });
+    return;
+  };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -51,7 +51,7 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path='/series' element={<SeriesPage />} />
         <Route path='/movies' element={<MoviesPage />} />
-        <Route path='/:type/:id' element={<ViewPage deleteItem={deleteItem} />} loader={dataLoader} />
+        <Route path='/:type/:id' element={<ViewPage deleteItem={deleteItem} editItem={updateItem} />} loader={dataLoader} />
         <Route path='/add' element={<AddPage addItemSubmit={addItem} />} />
         <Route path='*' element={<NotFoundPage />} />
       </Route>

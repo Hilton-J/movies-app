@@ -1,20 +1,19 @@
 import PropTypes from 'prop-types'
-// import { FaMapMarker } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 
-const MovieListing = ({ movie }) => {
+const Listing = ({ movie }) => {
 
 
   return (
-    <div key={movie.id} className="bg-white rounded-xl shadow-md relative ">
+    <div key={movie.id} className="bg-white shadow-md overflow-hidden h-full ">
       {/*================= TYPE & TITLE ================================*/}
-      <div className="text-gray-600"><Link to={`/${movie.type}/${movie.id}`}><img src={movie.image} /></Link>
+      <div className="h-full"><Link to={`/${movie.type}/${movie.id}`}><img src={movie.image} alt={movie.title} className='w-full h-full object-cover' /></Link>
       </div>
     </div>
   )
 };
 
-MovieListing.propTypes = {
+Listing.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
@@ -26,4 +25,4 @@ MovieListing.propTypes = {
   }).isRequired
 };
 
-export default MovieListing
+export default Listing

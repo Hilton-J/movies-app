@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 import BTN from './MoreBtn'
 // import Movies from '../movies.json' you use this if you're not using a server
 
-const MovieListings = ({ isHome = false }) => {
+const SeriesListings = ({ isHome = false }) => {
   //const JobListings = isHome ? Movies.slice(0, 3) : Movies; //if (isHome=true) Movies.slice(0, 3) else Movies
 
   const [series, setSeries] = useState([]);
@@ -39,7 +39,7 @@ const MovieListings = ({ isHome = false }) => {
           {isHome ? < h2 className="text-lg font-bold mb-10 text-center">LATEST SERIES </h2> : <BTN innerText={'ADD'} path={'/add'} />}
 
           {loading ? (<Spinner />) : (
-            <div className="grid md:grid-cols-4-col gap-2 my-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4-col gap-4 my-4">
               {
                 series.map((serie) => (
                   <Listing key={serie.id} movie={serie} />
@@ -54,8 +54,8 @@ const MovieListings = ({ isHome = false }) => {
   )
 };
 
-MovieListings.propTypes = {
+SeriesListings.propTypes = {
   isHome: PropTypes.bool,
 }
 
-export default MovieListings
+export default SeriesListings
