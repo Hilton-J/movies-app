@@ -58,7 +58,7 @@ const ViewItem = ({ deleteItem }) => {
     <section className='bg-blue-50 px-4 py-10'>
       <div className='container-xl lg:container m-auto'>
         <div className='grid md:grid-cols-2'>
-          <div>
+          <div className=''>
             <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" alt="Avengers Endgame" />
           </div>
           <div>
@@ -70,7 +70,7 @@ const ViewItem = ({ deleteItem }) => {
               <p>Year: {item.year}</p>
               <p>Type: {item.type}</p>
             </div>
-            <div className='flex flex-row'>
+            <div className='flex flex-row gap-4'>
               <BTN onClick={() => { onDeleteClick(item.id, item.type) }} innerText={'EDIT'} path={`/${item.type}`} />
               <BTN onClick={() => { onDeleteClick(item.id, item.type) }} innerText={'DELETE'} path={`/${item.type}`} />
             </div>

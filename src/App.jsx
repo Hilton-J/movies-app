@@ -11,19 +11,18 @@ import { dataLoader } from './DataLoader'
 
 const App = () => {
 
-
-
   //ADD NEW JOB
-  // const addJob = async (newJob) => {
-  //   await fetch('/api/jobs', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(newJob),
-  //   });
-  //   return;
-  // };
+  const addItem = async (newItem) => {
+    const url = `/api/${newItem.type}`
+    await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newItem),
+    });
+    return;
+  };
 
 
   //DELETE item: movie or series
@@ -52,18 +51,14 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path='/series' element={<SeriesPage />} />
         <Route path='/movies' element={<MoviesPage />} />
-        <Route path='/:type/:id' element=
-          {<ViewPage deleteItem={deleteItem} />} loader={dataLoader} />
-        <Route path='/add' element={<AddPage />} />
+        <Route path='/:type/:id' element={<ViewPage deleteItem={deleteItem} />} loader={dataLoader} />
+        <Route path='/add' element={<AddPage addItemSubmit={addItem} />} />
         <Route path='*' element={<NotFoundPage />} />
-
       </Route>
     )
-  )
-
-
+  );
 
   return <RouterProvider router={router} />
-}
+};
 
 export default App
