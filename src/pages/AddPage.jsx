@@ -3,7 +3,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import dataCountry from '../country.json'
-// import Multiselect from 'multiselect-react-dropdown' TODO: uncomment
+import Multiselect from 'multiselect-react-dropdown'
+import dataGenre from '../genre.json'
 
 
 const AddItem = ({ addItemSubmit }) => {
@@ -13,7 +14,7 @@ const AddItem = ({ addItemSubmit }) => {
   const [year, setYear] = useState('');
   const [type, setType] = useState('');
   const [image, setImage] = useState('');
-  // const [genre, setGenre] = useState(''); TODO: uncomment
+  const [genres, setGenres] = useState('');
   const navigate = useNavigate();
 
   function convertToBase64(e) {
@@ -38,6 +39,7 @@ const AddItem = ({ addItemSubmit }) => {
       title,
       type,
       description,
+      genre: genres.map(genre => genre),
       country,
       year,
       image
@@ -49,6 +51,14 @@ const AddItem = ({ addItemSubmit }) => {
     console.log(type);
     return navigate(`/${type}`);
 
+  };
+
+  const handleGenreSelect = (selectedList) => {
+    setGenres(selectedList);
+  };
+
+  const handleGenreRemove = (selectedList) => {
+    setGenres(selectedList);
   };
 
   return (
@@ -107,19 +117,18 @@ const AddItem = ({ addItemSubmit }) => {
           {/* ================================ GENRE ================================================= */}
           <div>
             <label
-              htmlFor="description"
+              htmlFor="genre"
               className="block mb-2"
             >Genre</label>
-            <textarea
-              id="description"
-              name="description"
-              className="w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm"
-              rows="4"
-              required
-              placeholder="Movie / Series Description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
+            <Multiselect
+              id='genre'
+              name='genre'
+              options={dataGenre.genres.map(genre => ({ name: genre, id: genre }))} // Convert to format expected by Multiselect
+              selectedValues={setGenres} // Preselected value to persist in dropdown
+              onSelect={handleGenreSelect} // Function will trigger on select event
+              onRemove={handleGenreRemove} // Function will trigger on remove event
+              displayValue="name" // Property name to display in the dropdown options
+            />
           </div>
 
           {/* ================================ COUNTRY ================================================= */}
