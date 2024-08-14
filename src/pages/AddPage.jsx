@@ -12,7 +12,7 @@ const AddItem = ({ addItemSubmit }) => {
   const [type, setType] = useState('');
   const navigate = useNavigate();
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
 
     const newItem = {
@@ -23,14 +23,14 @@ const AddItem = ({ addItemSubmit }) => {
       year
     };
 
-    addItemSubmit(newItem);
+    await addItemSubmit(newItem, type);
 
     toast.success('ADDED successfully!');
-    console.log(newItem.type);
+    console.log(type);
     return navigate(`/${newItem.type}`);
 
   };
-  //TODO: Insert is not working
+
   return (
     <section className="flex p-5 min-h-screen justify-center items-center">
       <div className='grid grid-cols-[30%_40%] gap-[10%] w-3/4 h-'>
@@ -107,14 +107,22 @@ const AddItem = ({ addItemSubmit }) => {
                 type="radio"
                 id="movie"
                 name="type"
-                value={type}
+                value='movies'
                 onChange={(e) => setType(e.target.value)}
-                checked
+                checked={type === 'movies'}
                 required />
               <label htmlFor="movie" className='ml-2'>Movie</label>
             </div>
             <div className='flex-1'>
-              <input type="radio" id="series" name="type" value="series" />
+              <input
+                type="radio"
+                id="series"
+                name="type"
+                value='series'
+                onChange={(e) => setType(e.target.value)}
+                checked={type === 'series'}
+                required
+              />
               <label htmlFor="series" className='ml-2'>Series</label>
             </div>
           </div>

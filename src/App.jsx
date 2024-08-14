@@ -12,8 +12,8 @@ import { dataLoader } from './DataLoader'
 const App = () => {
 
   //ADD NEW JOB
-  const addItem = async (newItem) => {
-    const url = `/api/${newItem.type}`
+  const addItem = async (newItem, itemType) => {
+    const url = `/api/${itemType}`
     await fetch(url, {
       method: 'POST',
       headers: {
