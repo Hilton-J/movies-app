@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import dataCountry from '../country.json'
+// import Multiselect from 'multiselect-react-dropdown' TODO: uncomment
+
 
 const AddItem = ({ addItemSubmit }) => {
   const [title, setTitle] = useState('');
@@ -11,6 +13,7 @@ const AddItem = ({ addItemSubmit }) => {
   const [year, setYear] = useState('');
   const [type, setType] = useState('');
   const [image, setImage] = useState('');
+  // const [genre, setGenre] = useState(''); TODO: uncomment
   const navigate = useNavigate();
 
   function convertToBase64(e) {
@@ -50,10 +53,10 @@ const AddItem = ({ addItemSubmit }) => {
 
   return (
     <section className="flex p-5 min-h-screen justify-center">
-      <div className='grid md:grid-cols-2 gap-[10%] w-3/4 md:h-28 mt-5'>
+      <div className='grid md:grid-cols-[1fr_1.5fr] gap-[10%] w-[60%] md:h-28 mt-5'>
         <div className="flex-1 flex justify-center items-center bg-gray-100 h-[90%]">
-          <span>Upload Movie Poster</span>
-          <img src={image} />
+          {!image ? <span>Upload Movie Poster</span> :
+            <img src={image} className='w-[100%] h-[100%]' />}
         </div>
         <form className="flex-2 flex flex-col" onSubmit={submitForm}>
 
@@ -81,7 +84,6 @@ const AddItem = ({ addItemSubmit }) => {
               placeholder="Movie / Series Name"
               className='w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm '
               required
-              value={image}
               onChange={convertToBase64} />
           </div>
 
@@ -91,6 +93,23 @@ const AddItem = ({ addItemSubmit }) => {
               htmlFor="description"
               className="block mb-2"
             >Description</label>
+            <textarea
+              id="description"
+              name="description"
+              className="w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm"
+              rows="4"
+              required
+              placeholder="Movie / Series Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
+          </div>
+          {/* ================================ GENRE ================================================= */}
+          <div>
+            <label
+              htmlFor="description"
+              className="block mb-2"
+            >Genre</label>
             <textarea
               id="description"
               name="description"
