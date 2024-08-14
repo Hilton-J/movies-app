@@ -36,25 +36,28 @@ const AddItem = ({ addItemSubmit }) => {
       type,
       description,
       country,
-      year
+      year,
+      image
     };
 
     await addItemSubmit(newItem, type);
 
     toast.success('ADDED successfully!');
     console.log(type);
-    return navigate(`/${newItem.type}`);
+    return navigate(`/${type}`);
 
   };
 
   return (
-    <section className="flex p-5 min-h-screen justify-center items-center">
-      <div className='grid grid-cols-[30%_40%] gap-[10%] w-3/4 h-'>
-        <div className="flex-1 flex justify-center items-center bg-gray-100">
+    <section className="flex p-5 min-h-screen justify-center">
+      <div className='grid md:grid-cols-2 gap-[10%] w-3/4 md:h-28 mt-5'>
+        <div className="flex-1 flex justify-center items-center bg-gray-100 h-[90%]">
           <span>Upload Movie Poster</span>
+          <img src={image} />
         </div>
         <form className="flex-2 flex flex-col" onSubmit={submitForm}>
 
+          {/* ================================ NAME ================================================= */}
           <div>
             <label htmlFor='title' className='block mb-2'>Movie/Series Name</label>
             <input
@@ -68,6 +71,21 @@ const AddItem = ({ addItemSubmit }) => {
               onChange={(e) => setTitle(e.target.value)} />
           </div>
 
+          {/* ================================ IMAGE ================================================= */}
+          <div>
+            <label htmlFor='image' className='block mb-2'>Movie/Series Image</label>
+            <input
+              type="file"
+              id='image'
+              name='image'
+              placeholder="Movie / Series Name"
+              className='w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm '
+              required
+              value={image}
+              onChange={convertToBase64} />
+          </div>
+
+          {/* ================================ DESCRIPTION ================================================= */}
           <div>
             <label
               htmlFor="description"
@@ -85,6 +103,7 @@ const AddItem = ({ addItemSubmit }) => {
             ></textarea>
           </div>
 
+          {/* ================================ COUNTRY ================================================= */}
           <div>
             <label htmlFor='country' className='block mb-2'>Country</label>
             <select
@@ -104,6 +123,7 @@ const AddItem = ({ addItemSubmit }) => {
             </select>
           </div>
 
+          {/* ================================ YEAR ================================================= */}
           <div>
             <label htmlFor='year' className='block mb-2'>Year</label>
             <input
@@ -117,6 +137,7 @@ const AddItem = ({ addItemSubmit }) => {
               onChange={(e) => setYear(e.target.value)} />
           </div>
 
+          {/* ================================ TYPE ================================================= */}
           <div className="flex mb-4">
             <div className='flex-1'>
               <input
