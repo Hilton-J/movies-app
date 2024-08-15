@@ -47,8 +47,8 @@ const AddItem = ({ addItemSubmit }) => {
 
     await addItemSubmit(newItem, type);
 
-    toast.success('ADDED successfully!');
-    console.log(type);
+    toast.success(`${type} ADDED successfully!`);
+
     return navigate(`/${type}`);
 
   };
