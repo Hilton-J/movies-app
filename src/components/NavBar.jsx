@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
-// import Links from './Links'
-// import { useState } from 'react';
 
 const NavBar = ({ header }) => {
   const linkClass = ({ isActive }) => isActive ? 'text-color' : 'hover:text-[#7379ff]';
@@ -21,7 +19,7 @@ const NavBar = ({ header }) => {
           </div>
 
           <div className='flex justify-end items-center'>
-            <NavLink to={'/subscribe'} className='bg-color py-1 px-9 rounded-3xl hover:bg-transparent hover:text-[#7379ff]'>SUBSCRIBE</NavLink>
+            <NavLink to={'/add'} className='bg-color py-1 px-9 rounded-3xl hover:bg-transparent hover:text-[#7379ff]'>ADD</NavLink>
           </div>
         </div>
       </nav>
