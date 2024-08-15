@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <Link to={'/'} className='md:text-2xl hover:text-[#7379ff]'>Enter-Stream</Link>
           </div>
-          <div className='flex gap-10 justify-center items-center'>
+          <div className='flex md:gap-10 gap-5 justify-center items-center md:text-base '>
             <Link className='hover:text-[#7379ff]' to={'/movies'}>MOVIES</Link>
             <Link className='hover:text-[#7379ff]' to={'/series'}>SERIES</Link>
           </div>

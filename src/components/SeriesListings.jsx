@@ -27,7 +27,7 @@ const SeriesListings = ({ isHome = false }) => {
 
 
   return (
-    <section className="bg-blue-50 md:px-4 md:py-10">
+    <section className="bg-blue-50 md:px-4 py-10">
       <div className="container-xl lg:container m-auto flex justify-center">
         <div className="w-[70%]">
 
