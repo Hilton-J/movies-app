@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import dataCountry from '../country.json'
+import dataCountry from '../database/country.json'
 import Multiselect from 'multiselect-react-dropdown'
-import dataGenre from '../genre.json'
+import dataGenre from '../database/genre.json'
 
 
 const AddItem = ({ addItemSubmit }) => {

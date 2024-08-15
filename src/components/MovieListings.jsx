@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Listing from './Listing'
 import Spinner from "./Spinner";
-import BTN from './MoreBtn'
+import BTN from './MoreBtn';
+import { fetchData } from "../DataLoader";
 
 const MovieListings = ({ isHome = false }) => {
 
@@ -10,12 +11,10 @@ const MovieListings = ({ isHome = false }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const apiUrl = isHome ? '/api/movies?_limit=8' : '/api/movies';
+    const loadMovies = async () => {
 
       try {
-        const res = await fetch(apiUrl);
-        const data = await res.json();
+        const data = await fetchData(isHome);
         setMovies(data);
       } catch (error) {
         console.log('Error fetching data', error);
@@ -23,7 +22,7 @@ const MovieListings = ({ isHome = false }) => {
         setLoading(false);
       }
     };
-    fetchMovies();
+    loadMovies();
   }, [isHome]);
 
   return (

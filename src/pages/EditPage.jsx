@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useNavigate, useLoaderData, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import dataCountry from '../country.json'
+import dataCountry from '../database/country.json'
 import Multiselect from 'multiselect-react-dropdown'
-import dataGenre from '../genre.json'
+import dataGenre from '../database/genre.json'
 
 
 const EditPage = ({ editItemSubmit }) => {
@@ -20,6 +20,7 @@ const EditPage = ({ editItemSubmit }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   console.log(item.genre);
+
   {/* ================================ CONVERT IMAGE TO BASE65 ================================================= */ }
   function convertToBase64(e) {
     const file = e.target.files[0];
@@ -50,12 +51,11 @@ const EditPage = ({ editItemSubmit }) => {
       image
     };
 
-    console.log(editItem);
+
     editItemSubmit(editItem);
-    console.log(editItemSubmit());
 
     toast.success('UPDATED successfully!');
-    console.log(showType);
+
     return navigate(`/${editItem.type}/${id}`);
 
   };

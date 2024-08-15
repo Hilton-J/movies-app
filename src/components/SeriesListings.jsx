@@ -2,24 +2,19 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Listing from "./Listing";
 import Spinner from "./Spinner";
-import BTN from './MoreBtn'
-// import Movies from '../movies.json' you use this if you're not using a server
+import BTN from './MoreBtn';
+import { fetchData } from "../DataLoader";
 
 const SeriesListings = ({ isHome = false }) => {
-  //const JobListings = isHome ? Movies.slice(0, 3) : Movies; //if (isHome=true) Movies.slice(0, 3) else Movies
 
   const [series, setSeries] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const apiUrl = isHome ? '/api/series?_limit=8' : '/api/series';
-
-
+    const loadSeries = async () => {
 
       try {
-        const res = await fetch(apiUrl);
-        const data = await res.json();
+        const data = await fetchData(isHome);
         setSeries(data);
       } catch (error) {
         console.log('Error fetching data', error);
@@ -27,7 +22,7 @@ const SeriesListings = ({ isHome = false }) => {
         setLoading(false);
       }
     };
-    fetchMovies();
+    loadSeries();
   }, [isHome]);
 
 
