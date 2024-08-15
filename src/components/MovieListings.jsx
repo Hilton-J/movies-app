@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 import Listing from './Listing'
 import Spinner from "./Spinner";
 import BTN from './MoreBtn'
-// import Movies from '../movies.json' you use this if you're not using a server
 
 const MovieListings = ({ isHome = false }) => {
-  //const JobListings = isHome ? Movies.slice(0, 3) : Movies; //if (isHome=true) Movies.slice(0, 3) else Movies
 
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,8 +12,6 @@ const MovieListings = ({ isHome = false }) => {
   useEffect(() => {
     const fetchMovies = async () => {
       const apiUrl = isHome ? '/api/movies?_limit=8' : '/api/movies';
-
-
 
       try {
         const res = await fetch(apiUrl);
@@ -30,16 +26,14 @@ const MovieListings = ({ isHome = false }) => {
     fetchMovies();
   }, [isHome]);
 
-  console.log(movies);
-
   return (
     <section className="bg-blue-50 px-4 py-10">
-      <div className="container-xl lg:container m-auto">
-        <div>
+      <div className="container-xl lg:container m-auto flex justify-center">
+        <div className="w-[70%]">
           {isHome ? < h2 className="text-lg font-bold mb-10 text-center">LATEST MOVIES </h2> : <BTN innerText={'ADD'} path={'/add'} />}
 
           {loading ? (<Spinner />) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4-col gap-4 my-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4-col gap-x-10 gap-y-5 my-4">
               {
                 movies.map((movie) => (
                   <Listing key={movie.id} movie={movie} />

@@ -17,9 +17,9 @@ const EditPage = ({ editItemSubmit }) => {
   const [showType, setType] = useState(item.type);
   const [image, setImage] = useState(item.image);
   const [genres, setGenres] = useState(item.genre);
-  const navigate = useNavigate();
   const { id } = useParams();
-
+  const navigate = useNavigate();
+  console.log(item.genre);
   {/* ================================ CONVERT IMAGE TO BASE65 ================================================= */ }
   function convertToBase64(e) {
     const file = e.target.files[0];
@@ -42,21 +42,21 @@ const EditPage = ({ editItemSubmit }) => {
     const editItem = {
       id,
       title,
-      showType,
+      type: showType,
       description,
-      genre: genres.map(genre => genre),
+      genre: genres.map((genre) => genre),
       country,
       year,
       image
     };
 
-
+    console.log(editItem);
     editItemSubmit(editItem);
-    console.log(editItemSubmit);
+    console.log(editItemSubmit());
 
     toast.success('UPDATED successfully!');
     console.log(showType);
-    return navigate(`/${showType}/${id}`);
+    return navigate(`/${editItem.type}/${id}`);
 
   };
 

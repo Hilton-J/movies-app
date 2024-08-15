@@ -33,13 +33,13 @@ const SeriesListings = ({ isHome = false }) => {
 
   return (
     <section className="bg-blue-50 px-4 py-10">
-      <div className="container-xl lg:container m-auto">
-        <div>
+      <div className="container-xl lg:container m-auto flex justify-center">
+        <div className="w-[70%]">
 
           {isHome ? < h2 className="text-lg font-bold mb-10 text-center">LATEST SERIES </h2> : <BTN innerText={'ADD'} path={'/add'} />}
 
           {loading ? (<Spinner />) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4-col gap-4 my-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4-col gap-x-10 gap-y-5 my-4">
               {
                 series.map((serie) => (
                   <Listing key={serie.id} movie={serie} />

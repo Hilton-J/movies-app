@@ -46,6 +46,7 @@ const App = () => {
     return;
   };
 
+  console.log(updateItem());
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout />}>

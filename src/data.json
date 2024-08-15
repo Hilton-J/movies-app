@@ -100,20 +100,20 @@
       "description": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl. Watch all you want. This nostalgic nod to '80s sci-fi and horror classics has earned dozens of Emmy nominations, including three for Outstanding Drama.",
       "genre": [
         {
-          "name": "Adventure",
-          "id": "Adventure"
-        },
-        {
           "name": "Drama",
           "id": "Drama"
         },
         {
-          "name": "Historical",
-          "id": "Historical"
+          "name": "Horror",
+          "id": "Horror"
         },
         {
-          "name": "Action",
-          "id": "Action"
+          "name": "Mystery",
+          "id": "Mystery"
+        },
+        {
+          "name": "Science Fiction",
+          "id": "Science Fiction"
         }
       ],
       "country": "United States",

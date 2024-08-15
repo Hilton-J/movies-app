@@ -22,19 +22,19 @@ const ViewPage = ({ deleteItem }) => {
   };
 
   return (
-    <section className='bg-blue-50 px-4 py-10 h-screen'>
-      <div className='container-xl lg:container m-auto flex justify-center'>
-        <div className='grid md:grid-cols-2 gap-10'>
-          <div className='flex justify-end'>
+    <section className='bg-blue-50 min-h-screen'>
+      <div className='container m-auto flex justify-center'>
+        <div className='grid md:grid-cols-2 gap-10 w-full max-w-2xl mt-5 p-10'>
+          <div className='flex-shrink-0 w-72 h-auto'>
             <img
               src={item.image}
               alt={item.title}
-              className='max-w-xs md:max-w-md w-full' />
+              className='w-full h-full objet-cover' />
           </div>
-          <div className='flex flex-col'>
+          <div className='flex flex-col gap-4 max-w-lg'>
             <h1 className='text-4xl font-bold mb-6'>{item.title}</h1>
-            <p className='text-lg mb-6 text-justify'>{item.description}</p>
-            <div className='text-lg mb-6'>
+            <p className='text-xs text-justify'>{item.description}</p>
+            <div className='text-xs'>
               <p><strong>Country</strong>: {item.country}</p>
               <p><strong>Genre</strong>: {genre || 'N/A'}</p>
               <p><strong>Year</strong>: {year}</p>
