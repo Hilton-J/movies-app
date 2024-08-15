@@ -62,13 +62,13 @@ const AddItem = ({ addItemSubmit }) => {
   };
 
   return (
-    <section className="flex p-5 min-h-screen justify-center">
-      <div className='grid md:grid-cols-[1fr_1.5fr] gap-[10%] w-[60%] md:h-28 mt-5'>
-        <div className="flex-1 flex justify-center items-center bg-gray-100 h-[90%]">
-          {!image ? <span>Upload Movie Poster</span> :
-            <img src={image} className='w-[100%] h-[100%]' />}
+    <section className="flex min-h-screen justify-center">
+      <div className='grid md:grid-cols-2 gap-8 w-full max-w-3xl mt-5 p-8'>
+        <div className="flex flex-col justify-center items-center bg-gray-100 h-fit min-h-[200px] md:min-h-[400px]">
+          {!image ? (<span>Upload Movie Poster</span>) : (
+            <img src={image} className='w-full h-full object-cover' />)}
         </div>
-        <form className="flex-2 flex flex-col" onSubmit={submitForm}>
+        <form className="flex flex-col space-y-2 " onSubmit={submitForm}>
 
           {/* ================================ NAME ================================================= */}
           <div>
@@ -78,7 +78,7 @@ const AddItem = ({ addItemSubmit }) => {
               id='title'
               name='title'
               placeholder="Movie / Series Name"
-              className='w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm '
+              className='w-full p-2 border border-gray-300 rounded-lg text-sm '
               required
               value={title}
               onChange={(e) => setTitle(e.target.value)} />
@@ -92,7 +92,7 @@ const AddItem = ({ addItemSubmit }) => {
               id='image'
               name='image'
               placeholder="Movie / Series Name"
-              className='w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm '
+              className='w-full p-2 border border-gray-300 rounded-lg text-sm '
               required
               onChange={convertToBase64} />
           </div>
@@ -106,7 +106,7 @@ const AddItem = ({ addItemSubmit }) => {
             <textarea
               id="description"
               name="description"
-              className="w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm"
+              className="w-full p-2 border border-gray-300 rounded-lg text-sm"
               rows="4"
               required
               placeholder="Movie / Series Description"
@@ -137,7 +137,7 @@ const AddItem = ({ addItemSubmit }) => {
             <select
               id="country"
               name="country"
-              className="w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm"
+              className="w-full p-2 border border-gray-300 rounded-lg text-sm"
               required
               value={country}
               onChange={(e) => setCountry(e.target.value)}
@@ -159,14 +159,14 @@ const AddItem = ({ addItemSubmit }) => {
               id='year'
               name='year'
               placeholder="2001"
-              className='w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm '
+              className='w-full p-2 border border-gray-300 rounded-lg text-sm '
               required
               value={year}
               onChange={(e) => setYear(e.target.value)} />
           </div>
 
           {/* ================================ TYPE ================================================= */}
-          <div className="flex mb-4">
+          <div className="flex">
             <div className='flex-1'>
               <input
                 type="radio"

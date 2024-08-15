@@ -39,7 +39,7 @@ const MovieListings = ({ isHome = false }) => {
           {isHome ? < h2 className="text-lg font-bold mb-10 text-center">LATEST MOVIES </h2> : <BTN innerText={'ADD'} path={'/add'} />}
 
           {loading ? (<Spinner />) : (
-            <div className="grid md:grid-cols-4-col gap-2 my-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4-col gap-4 my-4">
               {
                 movies.map((movie) => (
                   <Listing key={movie.id} movie={movie} />

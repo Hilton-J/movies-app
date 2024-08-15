@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLoaderData, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import dataCountry from '../country.json'
 import Multiselect from 'multiselect-react-dropdown'
@@ -8,14 +8,17 @@ import dataGenre from '../genre.json'
 
 
 const EditPage = ({ editItemSubmit }) => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [country, setCountry] = useState('');
-  const [year, setYear] = useState('');
-  const [type, setType] = useState('');
-  const [image, setImage] = useState('');
-  const [genres, setGenres] = useState('');
+  const item = useLoaderData(); //Set preloaded data from dataloader: DataLoader.jsx
+
+  const [title, setTitle] = useState(item.title);
+  const [description, setDescription] = useState(item.description);
+  const [country, setCountry] = useState(item.country);
+  const [year, setYear] = useState(item.year);
+  const [showType, setType] = useState(item.type);
+  const [image, setImage] = useState(item.image);
+  const [genres, setGenres] = useState(item.genre);
   const navigate = useNavigate();
+  const { id } = useParams();
 
   {/* ================================ CONVERT IMAGE TO BASE65 ================================================= */ }
   function convertToBase64(e) {
@@ -37,8 +40,9 @@ const EditPage = ({ editItemSubmit }) => {
     e.preventDefault();
 
     const editItem = {
+      id,
       title,
-      type,
+      showType,
       description,
       genre: genres.map(genre => genre),
       country,
@@ -47,13 +51,15 @@ const EditPage = ({ editItemSubmit }) => {
     };
 
 
-    editItemSubmit(editItem, type);
+    editItemSubmit(editItem);
+    console.log(editItemSubmit);
 
     toast.success('UPDATED successfully!');
-    console.log(type);
-    return navigate(`/${type}`);
+    console.log(showType);
+    return navigate(`/${showType}/${id}`);
 
   };
+
 
 
   const handleGenreSelect = (selectedList) => {
@@ -96,7 +102,6 @@ const EditPage = ({ editItemSubmit }) => {
               name='image'
               placeholder="Movie / Series Name"
               className='w-full p-2 mb-4 border border-gray-300 rounded-lg text-sm '
-              required
               onChange={convertToBase64} />
           </div>
 
@@ -127,7 +132,7 @@ const EditPage = ({ editItemSubmit }) => {
               id='genre'
               name='genre'
               options={dataGenre.genres.map(genre => ({ name: genre, id: genre }))} // Convert to format expected by Multiselect
-              selectedValues={setGenres} // Preselected value to persist in dropdown
+              selectedValues={genres} // Preselected value to persist in dropdown
               onSelect={handleGenreSelect} // Function will trigger on select event
               onRemove={handleGenreRemove} // Function will trigger on remove event
               displayValue="name" // Property name to display in the dropdown options
@@ -177,7 +182,7 @@ const EditPage = ({ editItemSubmit }) => {
                 name="type"
                 value='movies'
                 onChange={(e) => setType(e.target.value)}
-                checked={type === 'movies'}
+                checked={showType === 'movies'}
                 required />
               <label htmlFor="movie" className='ml-2'>Movie</label>
             </div>
@@ -188,7 +193,7 @@ const EditPage = ({ editItemSubmit }) => {
                 name="type"
                 value='series'
                 onChange={(e) => setType(e.target.value)}
-                checked={type === 'series'}
+                checked={showType === 'series'}
                 required
               />
               <label htmlFor="series" className='ml-2'>Series</label>

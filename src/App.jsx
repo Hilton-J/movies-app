@@ -35,8 +35,8 @@ const App = () => {
   };
 
   //UPDATE item: movie or series
-  const updateItem = async (item, path) => {
-    await fetch(`/api/${path}/${item.id}`, {
+  const updateItem = async (item) => {
+    await fetch(`/api/${item.type}/${item.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const App = () => {
         <Route path='/series' element={<SeriesPage />} />
         <Route path='/movies' element={<MoviesPage />} />
         <Route path='/:type/:id' element={<ViewPage deleteItem={deleteItem} />} loader={dataLoader} />
-        <Route path='/edit/:type/:id' element={<EditPage editItem={updateItem} />} loader={dataLoader} />
+        <Route path='/edit/:type/:id' element={<EditPage editItemSubmit={updateItem} />} loader={dataLoader} />
         <Route path='/add' element={<AddPage addItemSubmit={addItem} />} />
         <Route path='*' element={<NotFoundPage />} />
       </Route>
