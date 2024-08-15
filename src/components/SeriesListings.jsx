@@ -3,18 +3,18 @@ import PropTypes from "prop-types";
 import Listing from "./Listing";
 import Spinner from "./Spinner";
 import BTN from './MoreBtn';
-import { fetchSeries } from "../DataLoader";
 
 const SeriesListings = ({ isHome = false }) => {
-
   const [series, setSeries] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     const loadSeries = async () => {
-
+      const apiUrl = isHome ? '/api/series?_limit=8' : '/api/series';
       try {
-        const data = await fetchSeries(isHome);
+        const res = await fetch(apiUrl);
+        const data = await res.json();
         setSeries(data);
       } catch (error) {
         console.log('Error fetching data', error);
@@ -27,7 +27,7 @@ const SeriesListings = ({ isHome = false }) => {
 
 
   return (
-    <section className="bg-blue-50 px-4 py-10">
+    <section className="bg-blue-50 md:px-4 md:py-10">
       <div className="container-xl lg:container m-auto flex justify-center">
         <div className="w-[70%]">
 
@@ -51,6 +51,6 @@ const SeriesListings = ({ isHome = false }) => {
 
 SeriesListings.propTypes = {
   isHome: PropTypes.bool,
-}
+};
 
 export default SeriesListings
