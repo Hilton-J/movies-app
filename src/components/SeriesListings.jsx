@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Listing from "./Listing";
 import Spinner from "./Spinner";
 import BTN from './MoreBtn';
-import { fetchData } from "../DataLoader";
+import { fetchSeries } from "../DataLoader";
 
 const SeriesListings = ({ isHome = false }) => {
 
@@ -14,7 +14,7 @@ const SeriesListings = ({ isHome = false }) => {
     const loadSeries = async () => {
 
       try {
-        const data = await fetchData(isHome);
+        const data = await fetchSeries(isHome);
         setSeries(data);
       } catch (error) {
         console.log('Error fetching data', error);

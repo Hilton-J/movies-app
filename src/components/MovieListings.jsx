@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Listing from './Listing'
 import Spinner from "./Spinner";
-import BTN from './MoreBtn';
-import { fetchData } from "../DataLoader";
+import BTN from './MoreBtn'
+import { fetchMovies } from "../DataLoader";
 
 const MovieListings = ({ isHome = false }) => {
 
@@ -14,7 +14,7 @@ const MovieListings = ({ isHome = false }) => {
     const loadMovies = async () => {
 
       try {
-        const data = await fetchData(isHome);
+        const data = await fetchMovies(isHome);
         setMovies(data);
       } catch (error) {
         console.log('Error fetching data', error);

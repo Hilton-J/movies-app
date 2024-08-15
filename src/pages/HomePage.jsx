@@ -1,4 +1,3 @@
-// import Main from "../components/Main"
 import MovieListings from "../components/MovieListings"
 import SeriesListings from "../components/SeriesListings"
 
