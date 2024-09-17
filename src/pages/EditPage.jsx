@@ -54,10 +54,12 @@ const EditPage = ({ editItemSubmit }) => {
     };
 
 
+
     editItemSubmit(editItem);
+    console.log(editItem);
 
     toast.success('UPDATED successfully!');
-
+    // console.log(showType);
     return navigate(`/${editItem.type}/${id}`);
 
   };

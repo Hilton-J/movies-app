@@ -7,7 +7,14 @@ const Listing = ({ movie }) => {
   return (
     <div key={movie.id} className="bg-white shadow-md overflow-hidden h-full ">
       {/*================= TYPE & TITLE ================================*/}
-      <div className="h-full"><Link to={`/${movie.type}/${movie.id}`}><img src={movie.image} alt={movie.title} className='w-full h-full object-cover' /></Link>
+      <div className="h-full">
+        <Link to={`/${movie.type}/${movie.id}`}>
+          <img
+            src={movie.image}
+            alt={movie.title}
+            className='w-full h-full object-cover'
+          />
+        </Link>
       </div>
     </div>
   )

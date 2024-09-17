@@ -13,6 +13,41 @@ import { updateItem, deleteItem, addItem } from './API/apiRequests'
 
 const App = () => {
 
+  //ADD NEW JOB
+  // const addItem = async (newItem, path) => {
+  //   const url = `/api/${path}`
+  //   await fetch(url, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(newItem),
+  //   });
+  //   return;
+  // };
+
+
+  // //DELETE item: movie or series
+  // const deleteItem = async (id, path) => {
+  //   await fetch(`/api/${path}/${id}`, {
+  //     method: 'DELETE'
+  //   });
+  //   return;
+  // };
+
+  // //UPDATE item: movie or series
+  // const updateItem = async (item) => {
+  //   await fetch(`/api/${item.type}/${item.id}`, {
+  //     method: 'PUT',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(item),
+  //   });
+  //   return;
+  // };
+
+  // console.log(updateItem());
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout />}>

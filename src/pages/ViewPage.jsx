@@ -8,7 +8,7 @@ const ViewPage = ({ deleteItem }) => {
   const item = useLoaderData();
   console.log(item);
   const navigation = useNavigate();
-  const genre = item.genre.map((g) => g.name + ', ');
+  const genre = item.genre.map((g) => g.name).join(', ');
   const year = item.year.split('-')[0];
 
   const onDeleteClick = (itemID, type) => {

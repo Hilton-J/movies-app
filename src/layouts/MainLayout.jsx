@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import NavBar from "../components/NavBar"
-import Footer from "../components/Footer"
+import Footer from "../components/footer"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -18,7 +18,6 @@ const MainLayout = () => {
     const arrayName = pathParts[1];
     const id = pathParts[2];
 
-    //TODO: implemement what ChatGPT told you
     let title = '';
     switch (arrayName) {
       case 'series':
