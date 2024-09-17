@@ -26,7 +26,7 @@ const MovieListings = ({ isHome = false }) => {
   }, [isHome]);
 
   return (
-    <section className="bg-blue-50 md:px-4 py-10">
+    <section className="bg-blue-50 md:px-4 py-10 min-h-screen">
       <div className="container-xl lg:container m-auto flex justify-center">
         <div className="w-[70%]">
           {isHome ? < h2 className="text-lg font-bold mb-10 text-center">LATEST MOVIES </h2> : <BTN innerText={'ADD'} path={'/add'} />}
@@ -49,6 +49,6 @@ const MovieListings = ({ isHome = false }) => {
 
 MovieListings.propTypes = {
   isHome: PropTypes.bool,
-}
+};
 
 export default MovieListings

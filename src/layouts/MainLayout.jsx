@@ -14,6 +14,7 @@ const MainLayout = () => {
   useEffect(() => {
 
     const pathParts = location.pathname.split('/');
+    console.log(pathParts);
     const arrayName = pathParts[1];
     const id = pathParts[2];
 
@@ -21,16 +22,29 @@ const MainLayout = () => {
     let title = '';
     switch (arrayName) {
       case 'series':
-        title = 'LATEST SERIES';
+        {
+          if (id) {
+            fetchTitle(type, id).then((showTitle) => {
+              setPageTitle(showTitle);
+            });
+          }
+          else {
+            title = 'LATEST SERIES';
+          }
+        }
         break;
       case 'movies':
-        title = 'LATEST MOVIES';
+        {
+          if (id) {
+            fetchTitle(type, id).then((showTitle) => {
+              setPageTitle(showTitle);
+            });
+          }
+          else {
+            title = 'LATEST MOVIES';
+          }
+        }
         break;
-      case `${arrayName}/${id}`:
-        fetchTitle(type, id).then((showTitle) => {
-          setPageTitle(showTitle);
-        });
-        return;
       case 'add':
         title = 'ADD A MOVIE/SERIES';
         break;
@@ -56,5 +70,6 @@ const fetchTitle = async (type, id) => {
   const url = `/api/${type}/${id}`;
   const res = await fetch(url);
   const data = await res.json();
+  console.log(data);
   return data.title;
 };

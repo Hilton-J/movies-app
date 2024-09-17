@@ -2,7 +2,7 @@ import SeriesListings from '../components/SeriesListings'
 
 const SeriesPage = () => {
   return (
-    <section><SeriesListings /></section>
+    <section ><SeriesListings /></section>
   )
 }
 

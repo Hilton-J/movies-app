@@ -25,7 +25,7 @@ const NavBar = ({ header }) => {
       </nav>
 
       <div className='flex flex-1 justify-center items-center'>
-        <h1 className='text-white text-2xl md:text-4xl'>{header}</h1>
+        <h1 className='text-white text-2xl md:text-4xl uppercase'>{header}</h1>
       </div>
     </header>
   )

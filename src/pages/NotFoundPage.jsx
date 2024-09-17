@@ -3,7 +3,7 @@ import { FaExclamationTriangle } from 'react-icons/fa'
 
 const NotFoundPage = () => {
   return (
-    <section className="text-center flex flex-col justify-center items-center h-[60vh] md:h-[80vh]">
+    <section className="text-center flex flex-col justify-center items-center min-h-screen h-[60vh] md:h-[80vh]">
       <FaExclamationTriangle className='text-yellow-400 fa-4x mb-4 text-3xl md:text-6xl' />
       <h1 className="text-3xl md:text-6xl font-bold mb-4">404 Not Found</h1>
       <p className="text-base md:text-xl mb-5">This page does not exist</p>
