@@ -46,20 +46,10 @@ const AddItem = ({ addItemSubmit }) => {
     };
 
     await addItemSubmit(newItem, type);
-    // const url = `/api/${type}`
-    // await fetch(url, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(newItem),
-    // });
-
-
+ 
     toast.success(`${type} ADDED successfully!`);
 
     return navigate(`/${type}`);
-
   };
 
   const handleGenreSelect = (selectedList) => {
