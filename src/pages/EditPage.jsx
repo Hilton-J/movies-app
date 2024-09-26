@@ -17,6 +17,7 @@ const EditPage = ({ editItemSubmit }) => {
   const [showType, setType] = useState(item.type);
   const [image, setImage] = useState(item.image);
 
+
   const [genres, setGenres] = useState(item.genre);
 
   const { id } = useParams();
