@@ -6,7 +6,6 @@ import BTN from '../components/MoreBtn'
 const ViewPage = ({ deleteItem }) => {
 
   const item = useLoaderData();
-  console.log(item);
   const navigation = useNavigate();
   const genre = item.genre.map((g) => g.name).join(', ');
   const year = item.year.split('-')[0];

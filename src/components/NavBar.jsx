@@ -5,7 +5,7 @@ const NavBar = ({ header }) => {
   const linkClass = ({ isActive }) => isActive ? 'text-color' : 'hover:text-[#7379ff]';
 
   return (
-    <header className='bg-bgimage bg-no-repeat bg-cover max-h-fit h-[200px] md:h-[350px] bg-center flex flex-col'>
+    <header className='bg-bgimage bg-no-repeat bg-cover h-[200px] md:h-[350px] bg-center flex flex-col'>
       <nav className='flex justify-center'>
         <div className='text-white grid grid-cols-3 w-[90%] py-auto mt-9'>
 

@@ -5,8 +5,7 @@ const Listing = ({ movie }) => {
 
 
   return (
-    <div key={movie.id} className="bg-white shadow-md overflow-hidden h-full ">
-      {/*================= TYPE & TITLE ================================*/}
+    <div key={movie.id} className="bg-white shadow-lg overflow-hidden h-full ">
       <div className="h-full">
         <Link to={`/${movie.type}/${movie.id}`}>
           <img
