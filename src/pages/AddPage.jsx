@@ -91,7 +91,7 @@ const AddItem = ({ addItemSubmit }) => {
               id='image'
               name='image'
               placeholder="Movie / Series Name"
-              className='w-full p-2 border border-gray-300 rounded-lg text-sm '
+              className='w-full p-2 border border-gray-300 rounded-lg text-sm'
               required
               onChange={convertToBase64} />
           </div>
